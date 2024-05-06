@@ -147,14 +147,15 @@ fun extractDataElements(truncatedIsoMessage: String, primaryBitmapBinary: String
             } else {
                 // Negative length rule: Take the absolute value of the rule as the number of digits to consider as the length of the data element
                 val lengthDigits = -lengthRule
-                println("Length digit is : $lengthDigits\n")
+//                println("Length digit is : $lengthDigits\n")
 
                 val lengthValue = remainingMessage.substring(0, lengthDigits).toIntOrNull() ?: 0
-                println("Length value is : $lengthValue")
+//                println("Length value is : $lengthValue")
 
                 // Adjust the starting index to extract the data element after the length digits
                 dataElementValue = remainingMessage.substring(lengthDigits, lengthDigits + lengthValue)
                 remainingMessage = remainingMessage.substring(lengthDigits + lengthValue)
+
             }
             dataElements[dataElement] = dataElementValue
         }

@@ -37,11 +37,15 @@ fun main() {
 
         val (dataElements, remainingTruncatedIsoMessage) = extractDataElements(truncatedSecondaryBitmap, primaryBitmapBin, secondaryBitmapBin, dataElementLengthRules)
         println("Data Elements: $dataElements")
-        println("Remaining Truncated ISO Message: $remainingTruncatedIsoMessage")
+        println("Remaining ISO Message: $remainingTruncatedIsoMessage")
 
 
     } else {
         println("No Secondary Bitmap present.")
+
+        val (dataElements, remainingTruncatedIsoMessage) = extractDataElements(truncatedPPrimaryBitmap, primaryBitmapBin, "0", dataElementLengthRules)
+        println("Data Elements: $dataElements")
+        println("Remaining ISO Message: $remainingTruncatedIsoMessage")
     }
 
 
